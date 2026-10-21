@@ -8,12 +8,10 @@ updates:
       actions:
         patterns: ["*"]
 
-
-  # - package-ecosystem: npm
-  #   directory: /
-  #   schedule:
-  #     interval: weekly
-  #   groups:
-  #     dependencies:
-  #       patterns: ["*"]
-
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      dependencies:
+        patterns: ["*"]
