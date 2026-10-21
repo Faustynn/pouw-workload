@@ -1,11 +1,16 @@
-# Python
+# Java, Gradle
+.gradle/
+build/
+*.class
+out/
+
+# Python (e2e tests, notebooks)
 __pycache__/
 *.py[cod]
 .venv/
 venv/
 *.egg-info/
 dist/
-build/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
