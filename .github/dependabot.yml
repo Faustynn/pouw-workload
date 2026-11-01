@@ -27,3 +27,9 @@ updates:
     groups:
       images:
         patterns: ["*"]
+    ignore:
+      # The JDK and JRE images follow the Java toolchain of build.gradle (21 LTS).
+      # A new Java version is a change of the toolchain and both images
+      # together, to an LTS release, not a Dependabot bump of the image alone.
+      - dependency-name: eclipse-temurin
+        update-types: ["version-update:semver-major"]
