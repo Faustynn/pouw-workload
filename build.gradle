@@ -37,6 +37,13 @@ application {
     mainClass = 'com.pouw.workload.Main'
 }
 
+// BuildInfo reads the version from here (GET /manage/info)
+tasks.named('jar') {
+    manifest {
+        attributes 'Implementation-Version': project.version
+    }
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }

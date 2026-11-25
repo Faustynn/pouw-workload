@@ -54,6 +54,7 @@ public final class Main {
     static Javalin api(ScenarioService service) {
         return Javalin.create(config -> {
             config.routes.get("/health", ctx -> ctx.json(Map.of("status", "UP")));
+            config.routes.get("/manage/info", ctx -> ctx.json(BuildInfo.fromEnvironment()));
             config.routes.get("/scenarios", ctx -> scenarios(ctx, service));
             for (String prefix : new String[] {"", "/api/v1"}) {
                 config.routes.post(prefix + "/start", ctx -> start(ctx, service));
