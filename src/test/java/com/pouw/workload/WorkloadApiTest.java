@@ -66,6 +66,8 @@ class WorkloadApiTest {
             assertNotEquals(api.port(), metrics.port());
             assertEquals(200, get(api, "/health").statusCode());
             assertEquals("UP", json(get(api, "/health")).path("status").asText());
+            assertEquals("pouw-workload", json(get(api, "/manage/info")).path("service").asText());
+            assertEquals(404, get(metrics, "/manage/info").statusCode());
             assertEquals(200, get(api, "/scenarios").statusCode());
             assertTrue(json(get(api, "/scenarios")).path("scenarios").toString().contains("test"));
             assertEquals(200, get(api, "/api/v1/scenarios").statusCode());
